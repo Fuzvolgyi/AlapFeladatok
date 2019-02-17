@@ -48,13 +48,17 @@ public class Feladat_2 {
             System.out.println("Kérek egy egész számot");
             beolvasottSzam = szamBeolvaso();
             if (beolvasottSzam == vegjel) {
+                System.out.println("A végjelet adtad meg!");
                 continue;
             }
             minSzam = kissebbVizsgálat(beolvasottSzam, minSzam);
             maxSzam = nagyobbVizsgalat(beolvasottSzam, maxSzam);
         }
-        kiir("A beolvasott számok közül a legnagyobb: " + maxSzam);
-        kiir("A beolvasott számok közül a legkissebb: " + minSzam);
+        if (minSzam != Integer.MAX_VALUE || maxSzam != Integer.MIN_VALUE) {
+            kiir("A beolvasott számok közül a legnagyobb: " + maxSzam);
+            kiir("A beolvasott számok közül a legkissebb: " + minSzam);
+        }
+        
     }
 
     private static int szamBeolvaso() {
